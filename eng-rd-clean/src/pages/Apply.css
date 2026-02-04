@@ -1,0 +1,134 @@
+.apply {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Nouveau background plus sympa */
+  background: linear-gradient(135deg, #e0f0d9 0%, #c2e0a8 50%, #a7cc7f 100%);
+  box-shadow: 0 8px 24px rgba(102, 153, 51, 0.3);
+  
+  /* Optionnel : léger pattern */
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 2px, transparent 0),
+    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.15) 2px, transparent 0);
+  background-size: 40px 40px;
+  background-repeat: repeat;
+}
+
+
+.apply-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.apply-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.apply-form label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs et textarea */
+.apply-form input[type="text"],
+.apply-form input[type="email"],
+.apply-form input[type="tel"],
+.apply-form input[type="file"],
+.apply-form textarea,
+.apply-form select {
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: inherit;
+  appearance: none; /* enlève la flèche native du select sous certains navigateurs */
+  cursor: pointer;
+}
+
+/* Focus pour tous */
+.apply-form input:focus,
+.apply-form textarea:focus,
+.apply-form select:focus {
+  outline: none;
+  border-color: #7fcc72;
+  box-shadow: 0 0 5px #7fcc72;
+}
+
+/* Pour textarea */
+.apply-form textarea.vertical-only {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+/* Bouton */
+.submit-btn {
+  background-color: #7fcc72;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(127, 204, 114, 0.5);
+}
+
+.submit-btn:hover {
+  background-color: #69b75e;
+  box-shadow: 0 5px 15px rgba(105, 183, 94, 0.7);
+}
+
+/* Media query pour mobile */
+@media (max-width: 600px) {
+  .apply {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .apply-title {
+    font-size: 1.5rem;
+  }
+
+  .apply-form input[type="text"],
+  .apply-form input[type="email"],
+  .apply-form input[type="tel"],
+  .apply-form input[type="file"],
+  .apply-form textarea,
+  .apply-form select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Optionnel: flèche personnalisée pour select (pour certains navigateurs) */
+.apply-form select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #7fcc72 50%),
+    linear-gradient(135deg, #7fcc72 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 25px) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}

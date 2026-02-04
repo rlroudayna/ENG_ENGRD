@@ -1,0 +1,202 @@
+/* --- Style général du navbar --- */
+.navbar {
+  background-color: white;
+  padding: 10px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  pointer-events: auto;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Augmentation de la taille du logo */
+.navbar-logo img.logo-img {
+  height: 60px;
+  user-select: none;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  position: relative;
+}
+
+.navbar-menu li a,
+.dropdown-main-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar-menu li a:hover,
+.dropdown-main-link:hover {
+  color: #7fcc72;
+}
+
+/* --- Dropdown menu --- */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  min-width: 180px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 10px 0;
+  z-index: 10000;
+}
+
+.dropdown-menu li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.dropdown-menu li span {
+  display: block;
+  padding: 10px 15px;
+  color: #333;
+  font-weight: 400;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu li span:hover {
+  background-color: #f1f1f1;
+  color: #7fcc72;
+}
+
+/* Afficher le dropdown via JS */
+.dropdown-menu.show {
+  display: block;
+}
+
+/* --- Hamburger menu --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #7fcc72;
+  border-radius: 2px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 850px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    border-top: 2px solid #7fcc72;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 25px;
+  }
+
+  .dropdown-menu li span {
+    padding: 8px 20px;
+    background-color: transparent;
+  }
+}
+
+/* Les flèches du dropdown sont déjà en vert */
+.dropdown-arrow {
+  color: #7fcc72 !important; /* Ajout de !important pour assurer la couleur */
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-arrow:hover {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
+
+/* Alignement du header dropdown */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  cursor: default;
+}
+
+/* Flèches pour les menus déroulants sur grand écran */
+@media (min-width: 851px) {
+  .dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.75rem;
+    margin-left: 5px;
+    color: #7fcc72;
+  }
+}
+
+/* Styles pour les listes de menus */
+.navbar-menu,
+.dropdown-menu {
+  list-style: none; /* Supprime les puces */
+  padding-left: 0;  /* Enlève le padding par défaut */
+  margin: 0;        /* Enlève la marge par défaut */
+}
+
+.dropdown-menu {
+  width: 220px; /* Agrandir un peu la largeur */
+  padding: 12px 0; /* Un peu plus d'espace en haut et bas */
+  border-radius: 8px; /* Coins légèrement arrondis */
+  box-shadow: 0 4px 10px rgba(127, 204, 114, 0.25); /* Ombre légère */
+}
+
+.dropdown-menu li {
+  padding: 10px 20px; /* Plus d'espace entre les items */
+  font-weight: 600; /* Texte un peu plus marqué */
+  font-size: 15px; /* Un peu plus grand */
+  transition: background-color 0.25s ease;
+}
+
+.dropdown-menu li:hover {
+  background-color: rgba(127, 204, 114, 0.15); /* Surbrillance douce */
+}

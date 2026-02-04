@@ -1,0 +1,645 @@
+/* src/App.css */
+
+/* ⭐ IMPORTANT : Les directives Tailwind DOIVENT rester en haut ⭐ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Styles généraux de l'application */
+.App {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* ⭐ NOUVEAU : Empêche le débordement horizontal pour tous les éléments ⭐ */
+  word-wrap: break-word; /* Force le texte à revenir à la ligne */
+  overflow-wrap: break-word; /* Une autre propriété pour le retour à la ligne */
+}
+
+html, body {
+  background-color: #ffffff;
+  height: 100%;
+  /* ⭐ NOUVEAU : Empêche le débordement horizontal au niveau du corps de la page ⭐ */
+  overflow-x: hidden; 
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ⭐ VOS NOUVEAUX STYLES POUR LA PAGE DE CANDIDATURE (.apply) ⭐ */
+/* Ces styles sont ajoutés après Tailwind et peuvent être utilisés directement dans vos composants */
+
+.apply {
+  max-width: 700px;
+  margin: 50px auto;
+  padding: 40px;
+  border-radius: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Nouveau background plus sympa */
+  background: linear-gradient(135deg, #e0f0d9 0%, #c2e0a8 50%, #a7cc7f 100%);
+  box-shadow: 0 8px 24px rgba(102, 153, 51, 0.3);
+  
+  /* Optionnel : léger pattern */
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(255,255,255,0.15) 2px, transparent 0),
+    radial-gradient(circle at 80% 90%, rgba(255,255,255,0.15) 2px, transparent 0);
+  background-size: 40px 40px;
+  background-repeat: repeat;
+}
+
+
+.apply-title {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.apply-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.apply-form label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs et textarea */
+.apply-form input[type="text"],
+.apply-form input[type="email"],
+.apply-form input[type="tel"],
+.apply-form input[type="file"],
+.apply-form textarea,
+.apply-form select {
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  font-family: inherit;
+  appearance: none; /* enlève la flèche native du select sous certains navigateurs */
+  cursor: pointer;
+}
+
+/* Focus pour tous */
+.apply-form input:focus,
+.apply-form textarea:focus,
+.apply-form select:focus {
+  outline: none;
+  border-color: #7fcc72;
+  box-shadow: 0 0 5px #7fcc72;
+}
+
+/* Pour textarea */
+.apply-form textarea.vertical-only {
+  resize: vertical;
+  min-height: 100px;
+  max-height: 300px;
+}
+
+/* Bouton */
+.submit-btn {
+  background-color: #7fcc72;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(127, 204, 114, 0.5);
+}
+
+.submit-btn:hover {
+  background-color: #69b75e;
+  box-shadow: 0 5px 15px rgba(105, 183, 94, 0.7);
+}
+
+/* Media query pour mobile */
+@media (max-width: 600px) {
+  .apply {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .apply-title {
+    font-size: 1.5rem;
+  }
+
+  .apply-form input[type="text"],
+  .apply-form input[type="email"],
+  .apply-form input[type="tel"],
+  .apply-form input[type="file"],
+  .apply-form textarea,
+  .apply-form select {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+/* Optionnel: flèche personnalisée pour select (pour certains navigateurs) */
+.apply-form select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, #7fcc72 50%),
+    linear-gradient(135deg, #7fcc72 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - 25px) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+/* ⭐ NOUVEAU : Styles pour le contenu des pages (page-content) ⭐ */
+/* Ces styles sont essentiels pour le bon affichage des actualités et autres contenus */
+.page-content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff; /* Fond blanc pour le contenu */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* ⭐ NOUVEAU : Empêche le débordement de contenu à l'intérieur du cadre ⭐ */
+  overflow: hidden; /* Cache tout ce qui dépasse */
+}
+
+.page-title {
+  font-size: 38px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.no-content-message {
+  text-align: center;
+  font-size: 20px;
+  color: #666;
+  padding: 50px;
+}
+
+.error-message {
+  text-align: center;
+  font-size: 20px;
+  color: #d9534f; /* Rouge pour les erreurs */
+  padding: 50px;
+  font-weight: bold;
+}
+
+/* Styles pour la grille d'actualités */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 colonnes sur grand écran, s'adapte */
+  gap: 30px; /* Espacement entre les cartes */
+}
+
+/* Styles pour chaque carte d'actualité */
+.news-card {
+  background-color: #f9f9f9; /* Fond légèrement gris pour les cartes */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden; /* ⭐ NOUVEAU : Cache le contenu qui dépasse de la carte ⭐ */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card:hover {
+  transform: translateY(-5px); /* Petit effet de soulèvement au survol */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.news-image {
+  width: 100%;
+  height: 200px; /* Hauteur fixe pour les images */
+  object-fit: cover; /* L'image couvre l'espace sans se déformer */
+}
+
+.card-content {
+  padding: 20px;
+  flex-grow: 1; /* Le contenu prend l'espace restant */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+  /* ⭐ NOUVEAU : Gère le débordement du titre ⭐ */
+  white-space: nowrap; /* Empêche le retour à la ligne */
+  overflow: hidden; /* Cache ce qui dépasse */
+  text-overflow: ellipsis; /* Affiche "..." si le texte est trop long */
+}
+
+.card-date {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Pour que la description prenne de l'espace */
+  /* ⭐ NOUVEAU : Gère le débordement de la description ⭐ */
+  display: -webkit-box; /* Pour limiter le texte à un certain nombre de lignes */
+  -webkit-line-clamp: 3; /* Limite à 3 lignes (ajustez si vous voulez plus ou moins) */
+  -webkit-box-orient: vertical;
+overflow-x: hidden;
+  text-overflow: ellipsis; /* Affiche "..." */
+}
+
+.read-more-button {
+  display: inline-block;
+  background-color: #7fcc72; /* Votre couleur verte */
+  color: white;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  align-self: flex-start; /* Aligne le bouton à gauche */
+  margin-top: auto; /* Pousse le bouton vers le bas de la carte */
+}
+
+.read-more-button:hover {
+  background-color: #6cb862; /* Vert plus foncé au survol */
+  transform: translateY(-2px);
+}
+
+/* Styles pour la page de détail de l'actualité (NewsDetail.jsx) */
+.news-detail-page {
+  padding: 50px 30px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #7fcc72;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #6cb862;
+  text-decoration: underline;
+}
+
+.news-detail-image {
+  width: 100%;
+  max-height: 450px; /* Hauteur maximale pour l'image de détail */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-detail-title {
+  font-size: 42px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 800;
+  text-align: left; /* Aligné à gauche sur la page de détail */
+  /* ⭐ NOUVEAU : Gère le débordement du titre de la page de détail ⭐ */
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+}
+
+.news-detail-date {
+  font-size: 16px;
+  color: #888;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 15px;
+}
+
+.news-detail-content {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.8;
+  text-align: justify; /* Justifie le texte pour une meilleure lecture */
+  /* ⭐ NOUVEAU : Gère le débordement du contenu principal de l'actualité ⭐ */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.news-detail-content p {
+  margin-bottom: 20px; /* Espacement entre les paragraphes */
+}
+
+
+/* Styles pour la Navbar (si vous avez un Navbar.css, mettez ces styles là-bas) */
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px; /* Ajustez la taille de votre logo */
+  width: auto;
+  border-radius: 8px; /* Si votre logo est carré, donnez-lui des coins arrondis */
+}
+
+/* Styles pour le menu hamburger (mobile) */
+.hamburger {
+  display: none; /* Caché par défaut sur desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #7fcc72;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Styles pour le menu de navigation (desktop) */
+.navbar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-menu li {
+  position: relative; /* Pour les dropdowns */
+  margin-left: 30px;
+}
+
+.navbar-menu li a,
+.dropdown-main-link {
+  color: #444;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 10px 0;
+  display: block;
+  transition: color 0.3s ease;
+  cursor: pointer; /* Pour les spans cliquables */
+}
+
+.navbar-menu li a:hover,
+.dropdown-main-link:hover {
+  color: #7fcc72;
+}
+
+/* Styles pour les dropdowns */
+.dropdown-header {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-arrow {
+  background: none;
+  border: none;
+  color: #444;
+  font-size: 14px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%; /* Juste en dessous du parent */
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  min-width: 180px;
+  opacity: 0; /* Caché par défaut */
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 1001; /* S'assure qu'il est au-dessus du reste */
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu li {
+  margin: 0; /* Supprime la marge des éléments de liste du menu principal */
+}
+
+.dropdown-menu li a,
+.dropdown-menu li span { /* Applique les styles aux liens et spans dans le dropdown */
+  padding: 12px 20px;
+  color: #444;
+  text-decoration: none;
+  display: block;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  border-radius: 8px; /* Pour les coins arrondis au survol */
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li span:hover {
+  background-color: #f4f7f6;
+  color: #7fcc72;
+}
+
+/* Styles responsives pour mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Affiche le hamburger sur mobile */
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px; /* Ajustez en fonction de la hauteur de votre navbar */
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px 10px;
+overflow-x: hidden;
+    max-height: 0; /* Caché par défaut */
+    transition: max-height 0.4s ease-in-out;
+    align-items: flex-start; /* Aligne les éléments à gauche */
+  }
+
+  .navbar-menu.active {
+    max-height: 500px; /* Affiche le menu quand il est actif (hauteur suffisante) */
+  }
+
+  .navbar-menu li {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid #e0e0e0; /* Séparateur pour les éléments du menu mobile */
+  }
+
+  .navbar-menu li:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-menu li a,
+  .dropdown-main-link {
+    padding: 15px 20px; /* Plus de padding pour le toucher */
+    text-align: left;
+  }
+
+  .dropdown-menu {
+    position: static; /* Le dropdown s'affiche en dessous dans le flux normal */
+    box-shadow: none; /* Pas d'ombre pour les sous-menus en mobile */
+    border-radius: 0;
+    width: 100%;
+    background-color: #f4f7f6; /* Fond différent pour les sous-menus */
+    transform: translateY(0); /* Pas de transformation */
+  }
+
+  .dropdown-menu li a,
+  .dropdown-menu li span {
+    padding-left: 40px; /* Indentation pour les sous-éléments */
+  }
+
+  /* Animation du hamburger */
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Styles responsives pour la page Actualités et Détail */
+  .page-title {
+    font-size: 30px;
+  }
+
+  .news-grid {
+    grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+  }
+
+  .page-content {
+    padding: 20px 15px;
+    margin: 15px;
+  }
+
+  .news-detail-page {
+    padding: 30px 15px;
+  }
+
+  .news-detail-title {
+    font-size: 32px;
+  }
+
+  .news-detail-image {
+    max-height: 250px;
+  }
+
+  .news-detail-content {
+    font-size: 16px;
+  }
+}
+/* src/App.css (ajouter à la fin) */
+
+.submit-message {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.submit-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.submit-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}

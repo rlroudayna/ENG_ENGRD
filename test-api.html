@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API Jobs</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .job { border: 1px solid #ccc; margin: 10px 0; padding: 10px; }
+        .sector { color: green; font-weight: bold; }
+        button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Test API Jobs - Debug Secteurs</h1>
+    
+    <button onclick="fetchJobs()">Récupérer les offres</button>
+    <button onclick="createTestJob()">Créer offre de test</button>
+    <button onclick="clearResults()">Effacer</button>
+    
+    <div id="results"></div>
+
+    <script>
+        async function fetchJobs() {
+            try {
+                const response = await fetch('http://localhost:5000/api/jobs');
+                const jobs = await response.json();
+                
+                const resultsDiv = document.getElementById('results');
+                resultsDiv.innerHTML = '<h2>Offres récupérées:</h2>';
+                
+                jobs.forEach((job, index) => {
+                    const jobDiv = document.createElement('div');
+                    jobDiv.className = 'job';
+                    jobDiv.innerHTML = `
+                        <h3>${job.title}</h3>
+                        <p><strong>Secteur:</strong> <span class="sector">${job.sector || 'UNDEFINED'}</span></p>
+                        <p><strong>Type:</strong> ${job.type}</p>
+                        <p><strong>Location:</strong> ${job.location}</p>
+                        <p><strong>ID:</strong> ${job._id}</p>
+                        <details>
+                            <summary>Données complètes</summary>
+                            <pre>${JSON.stringify(job, null, 2)}</pre>
+                        </details>
+                    `;
+                    resultsDiv.appendChild(jobDiv);
+                });
+                
+                console.log('Jobs fetched:', jobs);
+            } catch (error) {
+                document.getElementById('results').innerHTML = `<p style="color: red;">Erreur: ${error.message}</p>`;
+                console.error('Error:', error);
+            }
+        }
+        
+        async function createTestJob() {
+            const testJob = {
+                title: "Test Job avec Secteur " + new Date().getTime(),
+                description: "Ceci est un test pour vérifier le secteur",
+                location: "Test City",
+                type: "CDI",
+                sector: "Automobile",
+                salary: "Test salary",
+                skills: ["Test", "Debug"]
+            };
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/jobs', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(testJob)
+                });
+                
+                const result = await response.json();
+                console.log('Job created:', result);
+                
+                // Refresh the list
+                fetchJobs();
+            } catch (error) {
+                console.error('Error creating job:', error);
+                alert('Erreur lors de la création: ' + error.message);
+            }
+        }
+        
+        function clearResults() {
+            document.getElementById('results').innerHTML = '';
+        }
+    </script>
+</body>
+</html>

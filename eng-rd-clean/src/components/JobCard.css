@@ -1,0 +1,166 @@
+/* Import de la police "Poppins" de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Style de base pour la carte individuelle */
+.job-card {
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s ease;
+    position: relative;
+    min-height: 280px;
+    border: 1px solid #e9ecef;
+    overflow: hidden;
+}
+
+.job-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #7fcc72, #6bb85f);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.job-card:hover::before {
+    transform: scaleX(1);
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #7fcc72;
+}
+
+/* Style pour le badge du type de contrat */
+.job-type-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Style du titre du poste */
+.job-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+    padding-right: 100px; /* Espace pour le badge */
+}
+
+/* Style général des paragraphes */
+.job-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+/* Conteneur des boutons */
+.job-card-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Style général des boutons */
+.job-card-buttons button {
+    flex: 1;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bouton "Voir plus" */
+.job-card-buttons button:first-child {
+    background: linear-gradient(135deg, #7fcc72, #6bb85f);
+    color: white;
+    box-shadow: 0 4px 15px rgba(127, 204, 114, 0.3);
+}
+
+.job-card-buttons button:first-child:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(127, 204, 114, 0.4);
+    background: linear-gradient(135deg, #6bb85f, #5ba84f);
+}
+
+/* Bouton "Postuler" */
+.job-card-buttons button:last-child {
+    background: white;
+    color: #7fcc72;
+    border: 2px solid #7fcc72;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.job-card-buttons button:last-child:hover {
+    background: #7fcc72;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(127, 204, 114, 0.3);
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 480px) {
+    .job-card {
+        padding: 25px;
+    }
+
+    .job-card-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* Styles pour le secteur */
+.job-sector {
+    font-size: 0.95rem;
+    color: #7fcc72;
+    font-weight: 700;
+    margin: 0 0 0.75rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(127, 204, 114, 0.1), rgba(107, 184, 95, 0.1));
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    border: 2px solid rgba(127, 204, 114, 0.3);
+}
+
+.job-location {
+    font-size: 1rem;
+    color: #718096;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.job-location::before {
+    content: "📍";
+    margin-right: 8px;
+    font-size: 1.1rem;
+}

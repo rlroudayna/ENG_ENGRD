@@ -1,0 +1,369 @@
+/* ===== FOOTER PRINCIPAL AGRANDI ===== */
+
+.footer {
+  background: linear-gradient(135deg, #7fcc72, #6bb85f);
+  color: white;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  box-shadow: 0 -4px 20px rgba(127, 204, 114, 0.3);
+  position: relative;
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== SECTION PRINCIPALE DU FOOTER ===== */
+
+.footer-main {
+  padding: 4rem 2rem 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* ===== LOGO SECTION ===== */
+
+.footer-logo-section {
+  text-align: center;
+}
+
+.footer-logo {
+  height: 80px;
+  width: auto;
+  filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
+/* ===== CONTACT SECTION ===== */
+
+.footer-contact {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.contact-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  color: #f0f9ff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-text {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* ===== SÉPARATEUR ===== */
+
+.footer-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  margin: 0 2rem;
+}
+
+/* ===== SECTION BOTTOM ===== */
+
+.footer-bottom {
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom .footer-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ===== NAVIGATION ===== */
+
+.footer-navigation {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.footer-nav-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f9ff;
+  transform: translateY(-1px);
+}
+
+.footer-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.footer-nav-link:hover::after {
+  width: 80%;
+}
+
+/* ===== SOCIAL LINKS ===== */
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* ===== COPYRIGHT ===== */
+
+.footer-copyright {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-copyright p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablette */
+@media (max-width: 768px) {
+  .footer-main {
+    padding: 3rem 1.5rem 2rem;
+  }
+  
+  .footer-container {
+    gap: 2rem;
+  }
+  
+  .footer-logo {
+    height: 70px;
+  }
+  
+  .footer-contact {
+    gap: 2rem;
+    flex-direction: column;
+  }
+  
+  .contact-item {
+    padding: 0.75rem 1.5rem;
+    gap: 0.75rem;
+  }
+  
+  .contact-link,
+  .contact-text {
+    font-size: 1rem;
+  }
+  
+  .footer-bottom .footer-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .footer-navigation {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer-main {
+    padding: 2rem 1rem 1.5rem;
+  }
+  
+  .footer-container {
+    gap: 1.5rem;
+  }
+  
+  .footer-logo {
+    height: 60px;
+  }
+  
+  .footer-contact {
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .contact-item {
+    padding: 0.6rem 1.25rem;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  .contact-icon {
+    font-size: 1.3rem;
+  }
+  
+  .contact-link,
+  .contact-text {
+    font-size: 0.9rem;
+  }
+  
+  .footer-bottom {
+    padding: 1.5rem 1rem;
+  }
+  
+  .footer-navigation {
+    gap: 1rem;
+    flex-direction: column;
+  }
+  
+  .footer-nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .social-icon {
+    font-size: 1.1rem;
+  }
+  
+  .footer-copyright {
+    margin-top: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Très petit mobile */
+@media (max-width: 360px) {
+  .footer-main {
+    padding: 1.5rem 0.75rem 1rem;
+  }
+  
+  .footer-logo {
+    height: 50px;
+  }
+  
+  .contact-item {
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+  
+  .contact-icon {
+    font-size: 1.2rem;
+  }
+  
+  .contact-link,
+  .contact-text {
+    font-size: 0.85rem;
+  }
+  
+  .footer-nav-link {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+}

@@ -1,0 +1,551 @@
+.joblist-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+  background-color: transparent;
+}
+
+/* Section des filtres améliorée */
+.filters {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.filters::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7fcc72, #6bb85f, #7fcc72);
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filters input[type="text"],
+.filters select,
+.filters .modern-select {
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  background-color: #f8f9fa;
+  transition: all 0.3s ease;
+  outline: none;
+  width: 100%;
+}
+
+.filters input[type="text"]:focus,
+.filters select:focus,
+.filters .modern-select:focus {
+  border-color: #7fcc72;
+  box-shadow: 0 0 0 4px rgba(127, 204, 114, 0.15);
+  background-color: white;
+  transform: translateY(-1px);
+}
+
+.filters select,
+.filters .modern-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237fcc72' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 20px;
+  padding-right: 45px;
+  appearance: none;
+  position: relative;
+}
+
+.filters select:hover,
+.filters .modern-select:hover {
+  border-color: #6bb85f;
+  background-color: #f0f9ff;
+}
+
+.filters select option {
+  padding: 12px 16px;
+  background-color: white;
+  color: #2d3748;
+  font-size: 15px;
+  border: none;
+}
+
+.filters select option:hover,
+.filters select option:focus {
+  background-color: rgba(127, 204, 114, 0.1);
+  color: #7fcc72;
+}
+
+/* Style personnalisé pour les options avec emojis */
+.filters select option[value="Automobile"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 99, 71, 0.1) 100%); }
+.filters select option[value="Aéronautique"] { background: linear-gradient(90deg, #fff 0%, rgba(135, 206, 235, 0.1) 100%); }
+.filters select option[value="Ferroviaire"] { background: linear-gradient(90deg, #fff 0%, rgba(50, 205, 50, 0.1) 100%); }
+.filters select option[value="Spatial"] { background: linear-gradient(90deg, #fff 0%, rgba(138, 43, 226, 0.1) 100%); }
+.filters select option[value="Militaire"] { background: linear-gradient(90deg, #fff 0%, rgba(105, 105, 105, 0.1) 100%); }
+.filters select option[value="Énergie"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 215, 0, 0.1) 100%); }
+.filters select option[value="Santé"] { background: linear-gradient(90deg, #fff 0%, rgba(220, 20, 60, 0.1) 100%); }
+.filters select option[value="IT"] { background: linear-gradient(90deg, #fff 0%, rgba(30, 144, 255, 0.1) 100%); }
+.filters select option[value="RH"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 182, 193, 0.1) 100%); }
+.filters select option[value="Marketing"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 20, 147, 0.1) 100%); }
+.filters select option[value="Finance"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 215, 0, 0.1) 100%); }
+.filters select option[value="Commercial"] { background: linear-gradient(90deg, #fff 0%, rgba(0, 191, 255, 0.1) 100%); }
+.filters select option[value="Communication"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 165, 0, 0.1) 100%); }
+.filters select option[value="Juridique"] { background: linear-gradient(90deg, #fff 0%, rgba(75, 0, 130, 0.1) 100%); }
+.filters select option[value="Qualité"] { background: linear-gradient(90deg, #fff 0%, rgba(34, 139, 34, 0.1) 100%); }
+.filters select option[value="Logistique"] { background: linear-gradient(90deg, #fff 0%, rgba(210, 180, 140, 0.1) 100%); }
+.filters select option[value="Production"] { background: linear-gradient(90deg, #fff 0%, rgba(255, 69, 0, 0.1) 100%); }
+.filters select option[value="R&D"] { background: linear-gradient(90deg, #fff 0%, rgba(72, 61, 139, 0.1) 100%); }
+.filters select option[value="Consulting"] { background: linear-gradient(90deg, #fff 0%, rgba(47, 79, 79, 0.1) 100%); }
+.filters select option[value="Formation"] { background: linear-gradient(90deg, #fff 0%, rgba(123, 104, 238, 0.1) 100%); }
+
+/* Checkboxes améliorées */
+.checkboxes {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  background-color: #f8f9fa;
+  border: 2px solid transparent;
+}
+
+.checkbox-group:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #7fcc72;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]:checked + .checkbox-label {
+  color: #7fcc72;
+  font-weight: 600;
+}
+
+.checkbox-group:has(input:checked) {
+  background-color: rgba(127, 204, 114, 0.1);
+  border-color: #7fcc72;
+}
+
+.checkbox-label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #4a5568;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Grille des cartes d'emploi */
+.job-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Message aucun résultat */
+.no-results {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.no-results h3 {
+  font-size: 1.5rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.no-results p {
+  font-size: 1.1rem;
+  color: #718096;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .filters-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .checkboxes {
+    gap: 1rem;
+  }
+  
+  .job-cards {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .joblist-container {
+    padding: 1rem;
+  }
+  
+  .filters {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .filters-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .checkboxes {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .checkbox-group {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .job-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filters {
+    padding: 1rem;
+  }
+  
+  .filters input[type="text"],
+  .filters select,
+  .filters .modern-select {
+    padding: 12px 16px;
+    font-size: 15px;
+    min-height: 48px; /* Améliore l'accessibilité tactile */
+  }
+  
+  .filters select,
+  .filters .modern-select {
+    background-size: 18px;
+    background-position: right 10px center;
+    padding-right: 40px;
+  }
+  
+  .filters select option,
+  .filters .modern-select option {
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .checkbox-group {
+    padding: 0.6rem 1rem;
+    min-height: 44px; /* Améliore l'accessibilité tactile */
+  }
+  
+  .checkbox-label {
+    font-size: 14px;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Amélioration pour les très petits écrans */
+@media (max-width: 360px) {
+  .filters input[type="text"],
+  .filters select {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+  
+  .filters select {
+    background-size: 16px;
+    background-position: right 8px center;
+    padding-right: 35px;
+  }
+  
+  .filter-label {
+    font-size: 0.8rem;
+  }
+}
+/* ===== DROPDOWN MODERNE ET RESPONSIVE ===== */
+
+/* Container pour le dropdown personnalisé */
+.custom-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  min-height: 52px;
+}
+
+.custom-select-trigger:hover {
+  border-color: #7fcc72;
+  background-color: #f0f9ff;
+}
+
+.custom-select-trigger.active {
+  border-color: #7fcc72;
+  box-shadow: 0 0 0 4px rgba(127, 204, 114, 0.15);
+  background-color: white;
+}
+
+.custom-select-arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+  color: #7fcc72;
+}
+
+.custom-select-trigger.active .custom-select-arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 2px solid #7fcc72;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  max-height: 300px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.custom-select-options.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 15px;
+}
+
+.custom-select-option:last-child {
+  border-bottom: none;
+}
+
+.custom-select-option:hover {
+  background-color: rgba(127, 204, 114, 0.1);
+  color: #7fcc72;
+  padding-left: 24px;
+}
+
+.custom-select-option.selected {
+  background-color: rgba(127, 204, 114, 0.2);
+  color: #6bb85f;
+  font-weight: 600;
+}
+
+.custom-select-option-emoji {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Scrollbar personnalisée pour les options */
+.custom-select-options::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-select-options::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb {
+  background: #7fcc72;
+  border-radius: 3px;
+}
+
+.custom-select-options::-webkit-scrollbar-thumb:hover {
+  background: #6bb85f;
+}
+
+/* Responsive pour les dropdowns personnalisés */
+@media (max-width: 768px) {
+  .custom-select-trigger {
+    padding: 12px 16px;
+    font-size: 15px;
+    min-height: 48px;
+  }
+  
+  .custom-select-option {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .custom-select-option:hover {
+    padding-left: 20px;
+  }
+  
+  .custom-select-options {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-select-trigger {
+    padding: 10px 14px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+  
+  .custom-select-arrow {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .custom-select-option {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+  
+  .custom-select-option:hover {
+    padding-left: 18px;
+  }
+  
+  .custom-select-options {
+    max-height: 200px;
+  }
+  
+  .custom-select-option-emoji {
+    font-size: 14px;
+  }
+}
+
+/* Animation d'entrée pour les options */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-select-options.active {
+  animation: slideDown 0.3s ease;
+}
+
+/* Focus states pour l'accessibilité */
+.custom-select-trigger:focus {
+  outline: none;
+  border-color: #7fcc72;
+  box-shadow: 0 0 0 4px rgba(127, 204, 114, 0.15);
+}
+
+.custom-select-option:focus {
+  outline: none;
+  background-color: rgba(127, 204, 114, 0.1);
+  color: #7fcc72;
+}
+
+/* États de chargement pour les dropdowns */
+.custom-select-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #718096;
+  font-style: italic;
+}
+
+.custom-select-loading::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e2e8f0;
+  border-top: 2px solid #7fcc72;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

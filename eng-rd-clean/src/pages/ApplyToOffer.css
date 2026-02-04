@@ -1,0 +1,72 @@
+/* ApplyToOffer.css */
+
+.apply-page {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.apply-page h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #212529;
+  margin-bottom: 30px;
+}
+
+/* Formulaire */
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.application-form input[type="text"],
+.application-form input[type="email"],
+.application-form input[type="tel"],
+.application-form input[type="file"],
+.application-form textarea {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease;
+}
+
+.application-form input:focus,
+.application-form textarea:focus {
+  border-color: #198754;
+  outline: none;
+}
+
+/* Bouton */
+.application-form button[type="submit"] {
+  padding: 12px 20px;
+  background-color: #198754;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.application-form button[type="submit"]:hover {
+  background-color: #146c43;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .apply-page {
+    padding: 25px 15px;
+  }
+
+  .apply-page h1 {
+    font-size: 1.5rem;
+  }
+}
