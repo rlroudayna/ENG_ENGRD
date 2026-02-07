@@ -153,14 +153,15 @@ export function getFileURL(filename) {
 }
 
 // WebSocket connection helper
-export function createWebSocket() {
-  const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-  const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'localhost:5000'
-    : window.location.host;
+//export function createWebSocket() {
+ // const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+ // const host = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+  //  ? 'localhost:5000'
+  ///
+  //   : window.location.host;
   
-  return new WebSocket(`${protocol}//${host}/ws`);
-}
+//  return new WebSocket(`${protocol}//${host}/ws`);
+//}
 
 export default {
   // News

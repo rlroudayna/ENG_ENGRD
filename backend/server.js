@@ -17,7 +17,7 @@ const app = express();
 
 // Configure CORS to allow credentials and specific headers
 app.use(cors({
-  origin: 'http://localhost:3000', // React app URL
+  origin: ['https://engineering-rmd.com', 'https://www.engineering-rmd.com'], // React app URL
   credentials: true,
   optionsSuccessStatus: 200,
   allowedHeaders: ['Content-Type', 'Authorization']
