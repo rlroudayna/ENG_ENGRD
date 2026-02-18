@@ -89,14 +89,14 @@ axiosFixFiles.forEach(({ file, fixes }) => {
   if (fs.existsSync(file)) {
     let content = fs.readFileSync(file, 'utf8');
     let modified = false;
-    
+
     fixes.forEach(({ search, replace }) => {
       if (typeof search === 'string' ? content.includes(search) : search.test(content)) {
         content = content.replace(search, replace);
         modified = true;
       }
     });
-    
+
     if (modified) {
       fs.writeFileSync(file, content);
       console.log(`✅ Fixed: ${file}`);
@@ -110,7 +110,7 @@ console.log('\n📋 Step 2: Creating missing API service functions...');
 const apiServicePath = 'eng-rd-clean/src/services/apiService.js';
 if (fs.existsSync(apiServicePath)) {
   let apiContent = fs.readFileSync(apiServicePath, 'utf8');
-  
+
   // Add fetchNewsById function if missing
   if (!apiContent.includes('fetchNewsById')) {
     const fetchNewsByIdFunction = `
@@ -118,20 +118,20 @@ export async function fetchNewsById(id) {
   const { data } = await publicClient.get(\`/api/news/\${id}\`);
   return data;
 }`;
-    
+
     // Insert after fetchNews function
     apiContent = apiContent.replace(
       'export async function fetchNews() {',
       `export async function fetchNews() {`
     );
-    
+
     apiContent = apiContent.replace(
       'export async function createNews(newsData) {',
       `${fetchNewsByIdFunction}
 
 export async function createNews(newsData) {`
     );
-    
+
     fs.writeFileSync(apiServicePath, apiContent);
     console.log('✅ Added fetchNewsById function to apiService.js');
   }

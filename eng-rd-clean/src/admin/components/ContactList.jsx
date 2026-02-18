@@ -1,7 +1,7 @@
 // src/admin/components/ContactList.jsx
 import { useEffect, useState } from 'react';
 import { fetchMessages, deleteMessage } from '../../services/apiService';
-import { formatDate, getMessageDate, isDateWithinDays } from '../../utils/dateUtils';
+import { getMessageDate, isDateWithinDays } from '../../utils/dateUtils';
 import './AdminStyles.css';
 
 export default function ContactList() {

@@ -1,7 +1,7 @@
 // src/admin/components/ApplicationList.jsx
 import { useEffect, useState } from 'react';
 import { fetchApplications, deleteApplication } from '../../services/apiService';
-import { formatDate, getApplicationDate } from '../../utils/dateUtils';
+import { getApplicationDate } from '../../utils/dateUtils';
 import './AdminStyles.css';
 
 export default function ApplicationList() {

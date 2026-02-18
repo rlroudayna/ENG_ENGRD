@@ -163,7 +163,7 @@ export function getFileURL(filename) {
 //  return new WebSocket(`${protocol}//${host}/ws`);
 //}
 
-export default {
+const apiService = {
   // News
   fetchNews,
   createNews,
@@ -201,6 +201,7 @@ export default {
   uploadVideo,
   
   // Utilities
-  getFileURL,
-  createWebSocket
+  getFileURL
 };
+
+export default apiService;
