@@ -15,6 +15,7 @@ const homeContentRoutes = require("./routes/homeContentRoutes"); // Routes pour 
 
 const app = express();
 
+
 // Configure CORS to allow credentials and specific headers
 app.use(cors({
   origin: ['https://engineering-rmd.com', 'https://www.engineering-rmd.com'], // React app URL
