@@ -1,16 +1,15 @@
-/* src/pages/Home.css */
 
-/* Variables de couleurs */
+
 :root {
-  --primary: #7fcc72; /* Vert principal */
-  --text-dark: #343a40; /* Texte foncé, plus doux */
-  --bg-light: #f8f9fa; /* Fond clair, doux */
-  --card-bg: #ffffff; /* Fond des cartes */
-  --border-light: #e9ecef; /* Bordure légère */
-  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); /* Ombre légère */
-  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1); /* Ombre moyenne */
-  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2); /* Ombre au survol */
-  --header-bg-dark: #fdfeff; /* Nouveau: couleur de fond sombre pour le titre de l'expertise */
+  --primary: #7fcc72; 
+  --text-dark: #343a40; 
+  --bg-light: #f8f9fa; 
+  --card-bg: #ffffff; 
+  --border-light: #e9ecef; 
+  --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.05); 
+  --shadow-medium: 0 8px 20px rgba(0, 0, 0, 0.1); 
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2); 
+  --header-bg-dark: #fdfeff; 
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
@@ -29,7 +28,6 @@ body,
   line-height: 1.6;
 }
 
-/* SECTION VIDÉO (HERO SECTION) - NE PAS MODIFIER */
 .hero-section {
   position: relative;
   width: 100%;
@@ -51,7 +49,6 @@ body,
   z-index: 0;
 }
 
-/* BLOC BIENVENUE */
 .hero-overlay {
   position: relative;
   z-index: 2;
@@ -70,8 +67,8 @@ body,
   margin-bottom: 20px;
 }
 
-.hero-overlay h1 .space { /* Ajouté pour gérer l'espace dans le h1, présent dans le JSX initial */
-    margin-right: 0.25em; /* Ou toute autre valeur pour un espace visible */
+.hero-overlay h1 .space { 
+    margin-right: 0.25em; 
 }
 
 .hero-overlay p {
@@ -79,7 +76,6 @@ body,
   color: #fff;
 }
 
-/* BLOC PRÉSENTATION (dans la même section vidéo) */
 .presentation-overlay {
   position: relative;
   z-index: 2;
@@ -121,7 +117,6 @@ body,
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* SECTION QUI SOMMES-NOUS */
 .who-are-we-section {
     padding: 60px 20px;
     background-color: #f9f9f9;
@@ -204,14 +199,12 @@ body,
     object-fit: cover;
 }
 
-
-/* SECTION NOTRE EXPERTISE (Nouveau style) */
 .expertise-section {
   padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
-  background-color: var(--header-bg-dark); /* Fond sombre pour toute la section comme l'image */
+  background-color: var(--header-bg-dark); 
   color: white;
   padding-top: 50px;
 }
@@ -320,14 +313,12 @@ body,
   color: white;
 }
 
-
-/* SECTION SECTEURS D'ACTIVITÉS (NOUVEAU STYLE) */
 .sectors-section {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
-    background-color: #fff; /* Fond blanc pour cette section */
+    background-color: #fff; 
 }
 
 .sectors-header {
@@ -336,7 +327,7 @@ body,
 
 .sectors-pre-title {
     font-size: 0.9rem;
-    color: #888; /* Gris plus doux pour le pré-titre */
+    color: #888; 
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -345,48 +336,48 @@ body,
 
 .sectors-main-title {
     font-size: 2.8rem;
-    color: var(--text-dark); /* Couleur foncée pour le titre principal */
+    color: var(--text-dark); 
     font-weight: 700;
 }
 
 .sectors-main-title .text-primary-sectors {
-    color: var(--primary); /* Vert pour le mot clé */
+    color: var(--primary); 
 }
 
 .sectors-grid-container {
     display: flex;
-    flex-direction: column; /* Par défaut, les catégories s'empilent */
-    gap: 40px; /* Espace entre les catégories (Transport, Énergie/Santé/IT) */
+    flex-direction: column; 
+    gap: 40px; 
 }
 
 .sector-category {
-    background-color: #f0f0f0; /* Fond léger pour chaque catégorie */
+    background-color: #f0f0f0; 
     border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Ombre légère pour la catégorie */
-    text-align: left; /* Titre de catégorie aligné à gauche */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
+    text-align: left; 
 }
 
 .sector-category h3 {
     font-size: 1.8rem;
     color: var(--text-dark);
     margin-bottom: 25px;
-    border-bottom: 2px solid var(--primary); /* Ligne verte sous le titre de catégorie */
-    display: inline-block; /* Pour que la ligne ne prenne pas toute la largeur */
+    border-bottom: 2px solid var(--primary); 
+    display: inline-block; 
     padding-bottom: 10px;
 }
 
 .sector-subgrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 3-4 colonnes pour les cartes */
-    gap: 20px; /* Espace entre les cartes du sous-réseau */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 20px; 
 }
 
 .sector-card {
     position: relative;
     border-radius: 10px;
-    overflow: hidden; /* Cache le dépassement de l'image */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Ombre pour chaque carte */
+    overflow: hidden; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
@@ -398,14 +389,14 @@ body,
 
 .sector-card img {
     width: 100%;
-    height: 150px; /* Hauteur fixe pour les images des cartes */
-    object-fit: cover; /* Recadre l'image pour couvrir l'espace */
+    height: 150px; 
+    object-fit: cover; 
     display: block;
     transition: transform 0.5s ease;
 }
 
 .sector-card:hover img {
-    transform: scale(1.05); /* Léger zoom au survol */
+    transform: scale(1.05); 
 }
 
 .sector-overlay {
@@ -413,22 +404,20 @@ body,
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent pour le texte */
+    background: rgba(0, 0, 0, 0.6); 
     color: white;
     padding: 10px;
     font-size: 1.1rem;
     font-weight: 600;
     text-align: center;
-    opacity: 1; /* Toujours visible */
+    opacity: 1; 
     transition: background-color 0.3s ease;
 }
 
 .sector-card:hover .sector-overlay {
-    background: rgba(0, 0, 0, 0.75); /* Plus sombre au survol */
+    background: rgba(0, 0, 0, 0.75); 
 }
 
-
-/* Styles spécifiques pour les rubriques alignées (Énergie, Santé, IT) */
 .sector-category-aligned {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -458,16 +447,14 @@ body,
 }
 
 .aligned-cards-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Même grille que pour transport */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
 }
 
-
-/* SECTION VALEURS (Nouveau style pour le texte) */
 .section#valeurs {
   padding: 80px 20px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: var(--bg-light); /* Fond clair pour cette section */
+  background-color: var(--bg-light); 
   color: var(--text-dark);
 }
 
@@ -504,7 +491,6 @@ body,
   line-height: 1.7;
 }
 
-/* Styles généraux pour les grilles de cartes (inchangés, s'appliquent aux valeurs) */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -566,8 +552,6 @@ body,
   color: white;
 }
 
-
-/* Animations au défilement (Scroll Animations) */
 .animated-item {
     opacity: 0;
     transform: translateY(20px);
@@ -579,8 +563,6 @@ body,
     transform: translateY(0);
 }
 
-
-/* RESPONSIVE GENERAL */
 @media screen and (max-width: 1024px) {
   .hero-overlay h1 {
     font-size: 2.8rem;
@@ -597,7 +579,7 @@ body,
   .presentation-overlay .text-side p {
     font-size: 1rem;
   }
-  /* Expertise */
+  
   .expertise-main-title {
     font-size: 2.2rem;
   }
@@ -608,7 +590,7 @@ body,
     width: 200px;
     padding: 30px 15px;
   }
-  /* Sectors */
+  
   .sectors-main-title {
       font-size: 2.2rem;
   }
@@ -627,7 +609,7 @@ body,
   .aligned-titles h3 {
       font-size: 1.4rem;
   }
-  /* Valeurs */
+  
   .values-header h2 {
     font-size: 2.2rem;
   }
@@ -691,7 +673,7 @@ body,
     width: 80%;
     max-width: 250px;
   }
-  /* Sectors */
+  
   .sectors-main-title {
       font-size: 1.8rem;
   }
@@ -703,8 +685,8 @@ body,
   }
   .sector-category h3 {
       font-size: 1.4rem;
-      text-align: center; /* Centrer les titres de catégorie sur mobile */
-      width: 100%; /* Pour centrer la ligne sous le titre */
+      text-align: center; 
+      width: 100%; 
   }
   .sector-subgrid {
       grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -717,7 +699,7 @@ body,
       font-size: 0.95rem;
   }
   .aligned-titles {
-      flex-direction: column; /* Empiler les titres "Énergie", "Santé", "IT" */
+      flex-direction: column; 
       gap: 15px;
   }
   .aligned-titles h3 {
@@ -763,7 +745,7 @@ body,
   .presentation-overlay .text-side p {
     font-size: 0.9rem;
   }
-  /* Expertise */
+  
   .expertise-main-title {
     font-size: 1.5rem;
   }
@@ -773,7 +755,7 @@ body,
   .expertise-card {
     width: 90%;
   }
-  /* Sectors */
+  
   .sectors-main-title {
       font-size: 1.5rem;
   }
@@ -781,7 +763,7 @@ body,
       font-size: 1.2rem;
   }
   .sector-subgrid {
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Plus petit sur très petits écrans */
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
       gap: 10px;
   }
   .sector-card img {
@@ -794,7 +776,7 @@ body,
   .aligned-titles h3 {
       font-size: 1.1rem;
   }
-  /* Valeurs */
+  
   .values-header h2 {
     font-size: 1.5rem;
   }
@@ -811,7 +793,7 @@ body,
     font-size: 0.9rem;
   }
 }
-/* --- Styles pour la section "Qui sommes nous" --- */
+
 .about-section {
   background-color: white;
   padding: 5rem 1rem;
@@ -829,17 +811,17 @@ body,
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a202c; /* Couleur sombre pour le texte principal */
+  color: #1a202c; 
 }
 
 .about-title .text-primary-expertise {
-  color: #7fcc72; /* Couleur verte pour le mot "nous" */
+  color: #7fcc72; 
 }
 
 .about-description {
-  font-size: 1.125rem; /* 18px */
-  color: #4a5568; /* gray-600 */
-  max-width: 56rem; /* max-w-2xl */
+  font-size: 1.125rem; 
+  color: #4a5568; 
+  max-width: 56rem; 
   margin: 0 auto;
 }
 
@@ -864,9 +846,8 @@ body,
   transition: all 0.3s ease;
 }
 
-/* Effet de survol sur la carte */
 .about-card:hover {
-  background-color: #7fcc72; /* Couleur verte spécifique au survol */
+  background-color: #7fcc72; 
   color: white;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
@@ -878,25 +859,25 @@ body,
 }
 
 .about-icon {
-  font-size: 2.5rem; /* 40px */
+  font-size: 2.5rem; 
   margin-bottom: 1rem;
   color: #7fcc72;
   transition: color 0.3s ease;
 }
 
 .about-card h4 {
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.25rem; 
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #2d3748; /* gray-800 */
+  color: #2d3748; 
   transition: color 0.3s ease;
 }
 
 .about-card p {
-  color: #718096; /* gray-500 */
+  color: #718096; 
   transition: color 0.3s ease;
 }
-/* Image styling for teamwork section */
+
 .teamwork-image {
   width: 100%;
   height: auto;
@@ -911,13 +892,11 @@ body,
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsive image styling */
 @media (max-width: 768px) {
   .teamwork-image {
     border-radius: 4px;
   }
-}/* R
-esponsive pour les secteurs alignés */
+}
 @media (max-width: 1024px) {
   .sector-category-aligned {
     grid-template-columns: repeat(2, 1fr);

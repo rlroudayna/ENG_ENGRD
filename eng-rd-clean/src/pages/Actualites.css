@@ -1,10 +1,9 @@
-/* Actualites.css */
+
 .actualites-page {
   min-height: calc(100vh - 140px);
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-/* Header de la page */
 .actualites-header {
   background: linear-gradient(135deg, #7fcc72 0%, #6bb85f 100%);
   color: white;
@@ -57,14 +56,12 @@
   margin: 0 auto;
 }
 
-/* Container principal */
 .actualites-container {
   max-width: 1400px;
   margin: 0 auto;
   padding: 3rem 2rem;
 }
 
-/* Grille des actualités */
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -72,7 +69,6 @@
   margin-top: 2rem;
 }
 
-/* Carte d'actualité */
 .news-card {
   background: white;
   border-radius: 20px;
@@ -106,7 +102,6 @@
   transform: scaleX(1);
 }
 
-/* Image de l'actualité */
 .news-image-container {
   position: relative;
   height: 250px;
@@ -124,7 +119,6 @@
   transform: scale(1.05);
 }
 
-/* Contenu de la carte */
 .news-content {
   padding: 2rem;
   flex: 1;
@@ -164,7 +158,6 @@
   flex: 1;
 }
 
-/* Bouton "Lire la suite" */
 .read-more-btn {
   display: inline-flex;
   align-items: center;
@@ -196,7 +189,6 @@
   transform: translateX(4px);
 }
 
-/* États de chargement et d'erreur */
 .loading-container,
 .error-container,
 .no-content-container {
@@ -251,7 +243,6 @@
   border-left: 4px solid #7fcc72;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .news-grid {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

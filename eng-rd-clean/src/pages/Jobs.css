@@ -1,4 +1,4 @@
-/* Jobs.css */
+
 .jobs-page {
   min-height: calc(100vh - 140px);
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -56,7 +56,6 @@
   margin: 0 auto;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .jobs-header {
     padding: 3rem 1rem;

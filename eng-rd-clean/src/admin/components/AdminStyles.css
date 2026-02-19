@@ -1,14 +1,12 @@
-/* ===== ADMIN STYLES - DESIGN MODERNE ET RESPONSIVE ===== */
 
-/* ===== VARIABLES CSS OPTIMISÉES ===== */
+
 :root {
-  /* Couleurs principales */
+  
   --primary-green: #7fcc72;
   --dark-green: #6bb85f;
   --light-green: #a8d99c;
   --green-hover: #5aa84f;
-  
-  /* Couleurs neutres */
+
   --white: #ffffff;
   --gray-50: #f8fafc;
   --gray-100: #f1f5f9;
@@ -20,28 +18,24 @@
   --gray-700: #334155;
   --gray-800: #1e293b;
   --gray-900: #0f172a;
-  
-  /* Couleurs d'état */
+
   --success: #10b981;
   --warning: #f59e0b;
   --error: #ef4444;
   --info: #3b82f6;
-  
-  /* Ombres */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  /* Rayons de bordure */
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
   --radius-sm: 0.375rem;
   --radius: 0.5rem;
   --radius-md: 0.75rem;
   --radius-lg: 1rem;
   --radius-xl: 1.5rem;
-  
-  /* Espacements */
+
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -51,14 +45,12 @@
   --space-8: 2rem;
   --space-10: 2.5rem;
   --space-12: 3rem;
-  
-  /* Transitions */
+
   --transition-fast: 150ms ease-in-out;
   --transition: 200ms ease-in-out;
   --transition-slow: 300ms ease-in-out;
 }
 
-/* ===== RESET ET BASE ===== */
 * {
   box-sizing: border-box;
 }
@@ -69,8 +61,7 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--gray-900);
   line-height: 1.6;
-}/* ==
-=== NAVBAR ADMIN ===== */
+}
 .admin-navbar {
   display: flex;
   align-items: center;
@@ -138,8 +129,7 @@
 .logout-button:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
-}/* ==
-=== LAYOUT PAGES ADMIN ===== */
+}
 .admin-page {
   min-height: calc(100vh - 80px);
   background: var(--gray-50);
@@ -157,7 +147,6 @@
   margin: 0 auto;
 }
 
-/* ===== HEADERS ADMIN MODERNES ===== */
 .admin-header {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: var(--white);
@@ -206,8 +195,7 @@
   margin: 0;
   font-weight: 400;
   max-width: 600px;
-}/* ==
-=== BOUTONS ADMIN OPTIMISÉS ===== */
+}
 .admin-add-button {
   display: inline-flex;
   align-items: center;
@@ -239,7 +227,6 @@
   font-size: 1.1rem;
 }
 
-/* ===== STATISTIQUES MODERNES ===== */
 .admin-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -302,7 +289,6 @@
   margin: 0;
 }
 
-/* ===== GRILLES ET CARTES OPTIMISÉES ===== */
 .admin-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
@@ -343,7 +329,6 @@
   opacity: 1;
 }
 
-/* ===== HEADERS DE CARTES ===== */
 .card-header {
   display: flex;
   align-items: center;
@@ -410,10 +395,8 @@
 .reply-btn:hover {
   background: rgba(245, 158, 11, 0.2);
   transform: scale(1.1);
-}/* 
-===== BOUTONS PRINCIPAUX MANQUANTS ===== */
+}
 
-/* Boutons de formulaire */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -471,7 +454,6 @@
   text-decoration: none;
 }
 
-/* Boutons de modal */
 .save-button {
   display: inline-flex;
   align-items: center;
@@ -525,7 +507,6 @@
   text-decoration: none;
 }
 
-/* Boutons de pied de carte */
 .edit-link {
   display: inline-flex;
   align-items: center;
@@ -592,7 +573,6 @@
   font-size: 1rem;
 }
 
-/* Boutons de notification toast */
 .toast-notification {
   position: fixed;
   top: 20px;
@@ -639,7 +619,6 @@
   }
 }
 
-/* Boutons spéciaux pour documents */
 .doc-link,
 .document-link {
   display: inline-flex;
@@ -687,7 +666,6 @@
   color: var(--success);
 }
 
-/* États désactivés */
 .btn-primary:disabled,
 .btn-secondary:disabled,
 .save-button:disabled,
@@ -705,7 +683,6 @@
   box-shadow: var(--shadow);
 }
 
-/* Boutons avec icônes */
 .btn-with-icon {
   display: inline-flex;
   align-items: center;
@@ -721,7 +698,6 @@
   justify-content: center;
 }
 
-/* Groupes de boutons */
 .button-group {
   display: flex;
   gap: var(--space-3);
@@ -734,13 +710,11 @@
   gap: var(--space-2);
 }
 
-/* Boutons pleine largeur */
 .btn-full-width {
   width: 100%;
   justify-content: center;
 }
 
-/* ===== SECTIONS DE FORMULAIRE ===== */
 .admin-form-section {
   background: var(--white);
   border-radius: var(--radius-xl);
@@ -808,7 +782,6 @@ textarea {
   min-height: 56px;
 }
 
-/* Styles spécifiques pour les selects */
 select,
 .modern-select {
   cursor: pointer;
@@ -852,7 +825,6 @@ textarea:focus,
   align-items: center;
 }
 
-/* ===== MODALES ===== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -933,7 +905,6 @@ textarea:focus,
   transform: scale(1.1);
 }
 
-/* ===== SECTIONS D'INFORMATION ===== */
 .info-section {
   margin-bottom: var(--space-6);
 }
@@ -975,7 +946,6 @@ textarea:focus,
   text-decoration: underline;
 }
 
-/* ===== DOCUMENTS ET FICHIERS ===== */
 .documents {
   display: flex;
   gap: var(--space-2);
@@ -995,7 +965,6 @@ textarea:focus,
   font-size: 0.875rem;
 }
 
-/* ===== MESSAGES ET CONTENU ===== */
 .message-full {
   background: var(--gray-50);
   padding: var(--space-4);
@@ -1025,7 +994,6 @@ textarea:focus,
   color: var(--gray-500);
 }
 
-/* ===== SPÉCIALISATIONS POUR DIFFÉRENTS TYPES DE MODALES ===== */
 .application-modal {
   max-width: 800px;
 }
@@ -1038,7 +1006,6 @@ textarea:focus,
   max-width: 900px;
 }
 
-/* ===== IMAGES DANS LES ACTUALITÉS ===== */
 .news-image-container {
   width: 100%;
   height: 200px;
@@ -1059,7 +1026,6 @@ textarea:focus,
   transform: scale(1.05);
 }
 
-/* ===== EXCERPTS ET APERÇUS ===== */
 .news-excerpt {
   color: var(--gray-600);
   font-size: 0.875rem;
@@ -1093,10 +1059,8 @@ textarea:focus,
   overflow-wrap: break-word;
   hyphens: auto;
   max-width: 100%;
-}/* 
-===== RESPONSIVE DESIGN POUR BOUTONS ===== */
+}
 
-/* Tablette */
 @media (max-width: 1024px) {
   .admin-form-section,
   .admin-form {
@@ -1117,7 +1081,6 @@ textarea:focus,
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .admin-header {
     flex-direction: column;
@@ -1218,7 +1181,6 @@ textarea:focus,
   }
 }
 
-/* Petit mobile */
 @media (max-width: 480px) {
   .admin-form-section,
   .admin-form {
@@ -1263,7 +1225,6 @@ textarea:focus,
   }
 }
 
-/* Très petit mobile */
 @media (max-width: 360px) {
   .admin-form-section,
   .admin-form {
@@ -1295,7 +1256,6 @@ textarea:focus,
   }
 }
 
-/* ===== AMÉLIORATIONS D'ACCESSIBILITÉ ===== */
 .btn-primary:focus,
 .btn-secondary:focus,
 .save-button:focus,
@@ -1311,7 +1271,6 @@ textarea:focus,
   outline-color: currentColor;
 }
 
-/* ===== ÉTATS DE CHARGEMENT ===== */
 .btn-loading {
   position: relative;
   color: transparent !important;
@@ -1340,7 +1299,6 @@ textarea:focus,
   border-top-color: var(--gray-700);
 }
 
-/* ===== ANIMATIONS SUPPLÉMENTAIRES ===== */
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
@@ -1354,7 +1312,6 @@ textarea:focus,
   animation: pulse 2s infinite;
 }
 
-/* ===== BOUTONS AVEC BADGES ===== */
 .btn-with-badge {
   position: relative;
 }
@@ -1376,7 +1333,6 @@ textarea:focus,
   justify-content: center;
 }
 
-/* ===== BOUTONS FLOTTANTS ===== */
 .floating-action-btn {
   position: fixed;
   bottom: 24px;
@@ -1410,8 +1366,7 @@ textarea:focus,
     height: 48px;
     font-size: 1.25rem;
   }
-}/* ===
-== BADGES DE TYPE D'EMPLOI MANQUANTS ===== */
+}
 .job-type-badge,
 .application-type-badge,
 .message-status-badge,
@@ -1428,7 +1383,6 @@ textarea:focus,
   border: 1px solid transparent;
 }
 
-/* Badges de type d'emploi avec couleurs spécifiques */
 .job-type-badge[data-type="CDI"] {
   background: linear-gradient(135deg, #10b981, #059669);
   color: var(--white);
@@ -1465,14 +1419,12 @@ textarea:focus,
   box-shadow: 0 2px 4px rgba(236, 72, 153, 0.2);
 }
 
-/* Badge par défaut pour les types non définis */
 .job-type-badge:not([data-type]) {
   background: linear-gradient(135deg, var(--gray-500), var(--gray-600));
   color: var(--white);
   box-shadow: 0 2px 4px rgba(107, 114, 128, 0.2);
 }
 
-/* Badges d'application */
 .application-type-badge[data-type="offer"] {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: var(--white);
@@ -1485,7 +1437,6 @@ textarea:focus,
   box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 }
 
-/* Badges de statut de message */
 .message-status-badge[data-status="new"] {
   background: linear-gradient(135deg, var(--error), #dc2626);
   color: var(--white);
@@ -1498,7 +1449,6 @@ textarea:focus,
   box-shadow: 0 2px 4px rgba(148, 163, 184, 0.2);
 }
 
-/* Badges de statut d'actualité */
 .news-status-badge[data-status="published"] {
   background: linear-gradient(135deg, var(--success), #059669);
   color: var(--white);
@@ -1511,7 +1461,6 @@ textarea:focus,
   box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
 }
 
-/* Effets hover pour tous les badges */
 .job-type-badge:hover,
 .application-type-badge:hover,
 .message-status-badge:hover,
@@ -1520,7 +1469,6 @@ textarea:focus,
   transition: var(--transition);
 }
 
-/* Badges avec icônes */
 .job-type-badge::before {
   content: '💼';
   margin-right: var(--space-1);
@@ -1549,8 +1497,7 @@ textarea:focus,
   content: '📰';
   margin-right: var(--space-1);
   font-size: 0.875rem;
-}/* ===
-== MÉTADONNÉES ET CONTENU DES CARTES ===== */
+}
 .job-meta,
 .candidate-meta,
 .contact-meta,
@@ -1580,7 +1527,6 @@ textarea:focus,
   flex: 1;
 }
 
-/* Titres des cartes */
 .job-title,
 .candidate-name,
 .sender-name,
@@ -1592,7 +1538,6 @@ textarea:focus,
   line-height: 1.3;
 }
 
-/* Salaires et informations spéciales */
 .job-salary {
   display: flex;
   align-items: center;
@@ -1610,7 +1555,6 @@ textarea:focus,
   font-size: 1.1rem;
 }
 
-/* Compétences */
 .job-skills {
   display: flex;
   flex-wrap: wrap;
@@ -1643,7 +1587,6 @@ textarea:focus,
   font-weight: 600;
 }
 
-/* Éléments spéciaux pour candidatures */
 .job-applied {
   display: flex;
   align-items: center;
@@ -1661,7 +1604,6 @@ textarea:focus,
   font-size: 1.1rem;
 }
 
-/* Sujets de messages */
 .message-subject {
   display: flex;
   align-items: center;
@@ -1683,7 +1625,6 @@ textarea:focus,
   flex: 1;
 }
 
-/* Excerpts d'actualités */
 .news-excerpt {
   color: var(--gray-600);
   font-size: 0.875rem;
@@ -1691,7 +1632,6 @@ textarea:focus,
   margin-top: var(--space-3);
 }
 
-/* Images d'actualités */
 .news-image-container {
   width: 100%;
   height: 200px;
@@ -1712,7 +1652,6 @@ textarea:focus,
   transform: scale(1.05);
 }
 
-/* Responsive pour les badges et métadonnées */
 @media (max-width: 768px) {
   .job-meta,
   .candidate-meta,
@@ -1748,8 +1687,7 @@ textarea:focus,
     font-size: 0.7rem;
     padding: 2px var(--space-2);
   }
-}/* ===
-== BOUTON SUPPRIMER STYLE MODERNE (comme Remplacer) ===== */
+}
 .delete-modal-button {
   display: inline-flex;
   align-items: center;
@@ -1781,7 +1719,6 @@ textarea:focus,
   box-shadow: 0 2px 6px rgba(220, 38, 38, 0.2);
 }
 
-/* Style pour le bouton Remplacer (pour cohérence) */
 .replace-modal-button {
   display: inline-flex;
   align-items: center;
@@ -1813,7 +1750,6 @@ textarea:focus,
   box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
 }
 
-/* Responsive pour les boutons modaux */
 @media (max-width: 768px) {
   .delete-modal-button,
   .replace-modal-button {
@@ -1824,7 +1760,6 @@ textarea:focus,
   }
 }
 
-/* Animation pour les boutons de modal */
 .delete-modal-button,
 .replace-modal-button {
   position: relative;
@@ -1846,8 +1781,7 @@ textarea:focus,
 .delete-modal-button:hover::before,
 .replace-modal-button:hover::before {
   left: 100%;
-}/* ==
-=== BOUTON ANNULER STYLE MODERNE ===== */
+}
 .cancel-modal-button {
   display: inline-flex;
   align-items: center;
@@ -1880,7 +1814,6 @@ textarea:focus,
   box-shadow: 0 2px 6px rgba(107, 114, 128, 0.1);
 }
 
-/* Responsive pour le bouton annuler */
 @media (max-width: 768px) {
   .cancel-modal-button {
     width: 100%;
@@ -1890,7 +1823,6 @@ textarea:focus,
   }
 }
 
-/* Animation pour le bouton annuler */
 .cancel-modal-button {
   position: relative;
   overflow: hidden;
@@ -1911,7 +1843,6 @@ textarea:focus,
   left: 100%;
 }
 
-/* Amélioration de l'espacement des boutons dans les modales */
 .modal-footer-buttons {
   display: flex;
   gap: var(--space-4);
@@ -1925,10 +1856,8 @@ textarea:focus,
     width: 100%;
     gap: var(--space-3);
   }
-}/* ==
-=== DESIGN MODERNE POUR LES SECTIONS HOMECONTENTEDITOR ===== */
+}
 
-/* Tabs de sections modernes */
 .section-tabs {
   display: flex;
   gap: var(--space-2);
@@ -1988,7 +1917,6 @@ textarea:focus,
   font-weight: 600;
 }
 
-/* Container de l'éditeur de contenu */
 .content-editor-container {
   background: var(--white);
   border-radius: var(--radius-xl);
@@ -2001,7 +1929,6 @@ textarea:focus,
   padding: var(--space-8);
 }
 
-/* Sections de l'éditeur */
 .editor-section {
   margin-bottom: var(--space-8);
   padding-bottom: var(--space-6);
@@ -2033,7 +1960,6 @@ textarea:focus,
   gap: var(--space-2);
 }
 
-/* Grilles pour les formulaires */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -2044,7 +1970,6 @@ textarea:focus,
   grid-column: 1 / -1;
 }
 
-/* Grilles spécialisées */
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -2075,7 +2000,6 @@ textarea:focus,
   gap: var(--space-6);
 }
 
-/* Cartes d'éditeur */
 .card-editor,
 .expertise-card,
 .value-card,
@@ -2098,7 +2022,6 @@ textarea:focus,
   transform: translateY(-1px);
 }
 
-/* Headers des cartes */
 .card-editor-header,
 .expertise-card-header,
 .value-card-header,
@@ -2126,7 +2049,6 @@ textarea:focus,
   font-size: 1.1rem;
 }
 
-/* Actions de l'éditeur */
 .editor-actions {
   display: flex;
   justify-content: center;
@@ -2178,12 +2100,10 @@ textarea:focus,
   animation: spin 1s linear infinite;
 }
 
-/* Container d'upload d'image */
 .image-upload-container {
   margin-top: var(--space-3);
 }
 
-/* Responsive pour HomeContentEditor */
 @media (max-width: 1024px) {
   .section-tabs {
     padding: var(--space-3);
@@ -2271,8 +2191,7 @@ textarea:focus,
   .media-card {
     padding: var(--space-3);
   }
-}/* 
-===== PAGE DE LOGIN ADMIN ===== */
+}
 
 .login-container {
   min-height: 100vh;
@@ -2413,7 +2332,6 @@ textarea:focus,
   text-align: center;
 }
 
-/* Responsive pour la page de login */
 @media (max-width: 768px) {
   .login-container {
     padding: var(--space-3);
@@ -2454,9 +2372,6 @@ textarea:focus,
   }
 }
 
-/* ===== AMÉLIORATION NAVIGATION ADMIN ===== */
-
-/* Logo cliquable */
 .logo-link {
   color: inherit;
   text-decoration: none;
@@ -2472,7 +2387,6 @@ textarea:focus,
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Bouton de navigation arrière */
 .admin-back-button {
   display: inline-flex;
   align-items: center;
@@ -2500,7 +2414,6 @@ textarea:focus,
   transform: translateX(0);
 }
 
-/* Amélioration de la navbar pour inclure le bouton retour */
 .admin-navbar {
   display: flex;
   align-items: center;
@@ -2521,7 +2434,6 @@ textarea:focus,
   gap: var(--space-4);
 }
 
-/* Responsive pour la navigation */
 @media (max-width: 768px) {
   .admin-navbar {
     flex-wrap: wrap;
@@ -2542,8 +2454,6 @@ textarea:focus,
     font-size: 1.25rem;
   }
 }
-/* =
-==== STYLES SPÉCIFIQUES POUR LE FORMULAIRE D'AJOUT D'OFFRE ===== */
 
 .job-form {
   background: var(--white);
@@ -2575,7 +2485,6 @@ textarea:focus,
   flex: 1;
 }
 
-/* S'assurer que tous les inputs et selects dans job-form sont grands */
 .job-form input,
 .job-form select,
 .job-form textarea {
@@ -2614,7 +2523,6 @@ textarea:focus,
   line-height: 1.5;
 }
 
-/* Responsive pour le formulaire job */
 @media (max-width: 768px) {
   .job-form .form-row {
     flex-direction: column;
@@ -2623,11 +2531,10 @@ textarea:focus,
   .job-form {
     padding: var(--space-6);
   }
-}/* ====
-= GESTION DES LONGS TEXTES DANS LES CARTES DE MESSAGES ===== */
+}
 
 .message-card {
-  min-width: 0; /* Permet au flex item de rétrécir */
+  min-width: 0; 
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -2653,18 +2560,18 @@ textarea:focus,
 
 .message-card .message-text {
   word-wrap: break-word;
-  word-break: break-all; /* Force la coupure même au milieu des mots pour les très longs textes */
+  word-break: break-all; 
   overflow-wrap: break-word;
   hyphens: auto;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3; /* Limite à 3 lignes */
+  -webkit-line-clamp: 3; 
+  line-clamp: 3; 
   -webkit-box-orient: vertical;
 }
 
-/* Styles pour les métadonnées */
 .message-card .contact-meta {
   min-width: 0;
 }
@@ -2678,10 +2585,9 @@ textarea:focus,
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  max-width: 200px; /* Limite la largeur des emails longs */
+  max-width: 200px; 
 }
 
-/* Sujet du message */
 .message-card .message-subject {
   min-width: 0;
   overflow: hidden;
@@ -2692,8 +2598,7 @@ textarea:focus,
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 100%;
-}/* =
-==== FILTRES ADMIN ===== */
+}
 
 .admin-filters {
   background: var(--white);
@@ -2766,7 +2671,6 @@ textarea:focus,
   font-weight: 500;
 }
 
-/* Responsive pour les filtres */
 @media (max-width: 768px) {
   .filters-row {
     grid-template-columns: 1fr;
@@ -2777,8 +2681,7 @@ textarea:focus,
     padding: var(--space-4);
   }
 }
-/* 
-===== STYLES POUR AFFICHAGE PROÉMINENT DU NOM DE L'OFFRE ===== */
+
 .job-applied-prominent {
   background: linear-gradient(135deg, #e8f5e8 0%, #f0f9f0 100%);
   border: 2px solid var(--primary-green);
@@ -2814,7 +2717,6 @@ textarea:focus,
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
 }
 
-/* Responsive pour mobile */
 @media (max-width: 768px) {
   .job-applied-prominent {
     flex-direction: column;
@@ -2828,14 +2730,12 @@ textarea:focus,
   }
 }
 
-/* Animation au survol */
 .application-card:hover .job-applied-prominent {
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
   transition: all 0.2s ease;
 }
 
-/* Badge type candidature amélioré */
 .application-type-badge[data-type="offer"] {
   background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
   color: white;

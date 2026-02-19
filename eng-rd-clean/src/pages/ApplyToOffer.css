@@ -1,4 +1,4 @@
-/* ApplyToOffer.css */
+
 
 .apply-page {
   max-width: 900px;
@@ -17,7 +17,6 @@
   margin-bottom: 30px;
 }
 
-/* Formulaire */
 .application-form {
   display: flex;
   flex-direction: column;
@@ -43,7 +42,6 @@
   outline: none;
 }
 
-/* Bouton */
 .application-form button[type="submit"] {
   padding: 12px 20px;
   background-color: #198754;
@@ -60,7 +58,6 @@
   background-color: #146c43;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .apply-page {
     padding: 25px 15px;

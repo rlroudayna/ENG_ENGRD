@@ -1,4 +1,4 @@
-/* ===== CUSTOM SELECT COMPONENT ===== */
+
 
 .custom-select-container {
   position: relative;
@@ -142,7 +142,6 @@
   flex: 1;
 }
 
-/* Scrollbar personnalisée */
 .custom-select-options::-webkit-scrollbar {
   width: 6px;
 }
@@ -161,7 +160,6 @@
   background: #6bb85f;
 }
 
-/* Animation d'entrée */
 @keyframes slideDown {
   from {
     opacity: 0;
@@ -176,8 +174,6 @@
 .custom-select-options.active {
   animation: slideDown 0.3s ease;
 }
-
-/* ===== RESPONSIVE DESIGN ===== */
 
 @media (max-width: 768px) {
   .custom-select-trigger {
@@ -263,8 +259,6 @@
   }
 }
 
-/* ===== ÉTATS SPÉCIAUX ===== */
-
 .custom-select-container.disabled .custom-select-trigger {
   background-color: #f1f5f9;
   color: #a0aec0;
@@ -287,8 +281,6 @@
   box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.15);
 }
 
-/* ===== ACCESSIBILITÉ ===== */
-
 @media (prefers-reduced-motion: reduce) {
   .custom-select-trigger,
   .custom-select-arrow,
@@ -302,7 +294,6 @@
   }
 }
 
-/* Focus visible pour l'accessibilité clavier */
 .custom-select-trigger:focus-visible {
   outline: 2px solid #7fcc72;
   outline-offset: 2px;

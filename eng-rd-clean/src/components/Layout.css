@@ -1,4 +1,4 @@
-/* Layout.css */
+
 .layout-container {
   display: flex;
   flex-direction: column;
@@ -11,12 +11,10 @@
   flex-direction: column;
 }
 
-/* Assure que le contenu prend au moins la hauteur disponible */
 .main-content > * {
   flex-grow: 1;
 }
 
-/* Reset pour éviter les marges par défaut */
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +27,6 @@ body {
   color: #333;
 }
 
-/* Assure que le footer reste en bas même avec peu de contenu */
 html, body, #root {
   height: 100%;
 }

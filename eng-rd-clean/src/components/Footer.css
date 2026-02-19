@@ -1,4 +1,4 @@
-/* ===== FOOTER PRINCIPAL AGRANDI ===== */
+
 
 .footer {
   background: linear-gradient(135deg, #7fcc72, #6bb85f);
@@ -22,8 +22,6 @@
   z-index: 0;
 }
 
-/* ===== SECTION PRINCIPALE DU FOOTER ===== */
-
 .footer-main {
   padding: 4rem 2rem 3rem;
   position: relative;
@@ -39,8 +37,6 @@
   gap: 3rem;
 }
 
-/* ===== LOGO SECTION ===== */
-
 .footer-logo-section {
   text-align: center;
 }
@@ -55,8 +51,6 @@
 .footer-logo:hover {
   transform: scale(1.05);
 }
-
-/* ===== CONTACT SECTION ===== */
 
 .footer-contact {
   display: flex;
@@ -108,15 +102,11 @@
   font-size: 1.1rem;
 }
 
-/* ===== SÉPARATEUR ===== */
-
 .footer-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   margin: 0 2rem;
 }
-
-/* ===== SECTION BOTTOM ===== */
 
 .footer-bottom {
   padding: 2rem;
@@ -131,8 +121,6 @@
   align-items: center;
   gap: 2rem;
 }
-
-/* ===== NAVIGATION ===== */
 
 .footer-navigation {
   display: flex;
@@ -173,8 +161,6 @@
   width: 80%;
 }
 
-/* ===== SOCIAL LINKS ===== */
-
 .footer-social {
   display: flex;
   gap: 1rem;
@@ -206,8 +192,6 @@
   line-height: 1;
 }
 
-/* ===== COPYRIGHT ===== */
-
 .footer-copyright {
   text-align: center;
   margin-top: 1.5rem;
@@ -222,9 +206,6 @@
   font-weight: 400;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-
-/* Tablette */
 @media (max-width: 768px) {
   .footer-main {
     padding: 3rem 1.5rem 2rem;
@@ -269,7 +250,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .footer-main {
     padding: 2rem 1rem 1.5rem;
@@ -338,7 +318,6 @@
   }
 }
 
-/* Très petit mobile */
 @media (max-width: 360px) {
   .footer-main {
     padding: 1.5rem 0.75rem 1rem;

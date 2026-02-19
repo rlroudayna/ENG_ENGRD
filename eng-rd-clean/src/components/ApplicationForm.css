@@ -1,6 +1,5 @@
-/* ApplicationForm.css - Design moderne pour les candidatures */
 
-/* Variables CSS */
+
 :root {
   --primary-green: #7fcc72;
   --dark-green: #6bb862;
@@ -21,7 +20,6 @@
   --radius-lg: 12px;
 }
 
-/* Container principal */
 .application-container {
   max-width: 800px;
   margin: 2rem auto;
@@ -32,7 +30,6 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Header de la candidature */
 .application-header {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -63,14 +60,12 @@
   font-weight: 600;
 }
 
-/* Formulaire */
 .application-form {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/* Groupes de champs */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -97,7 +92,6 @@
   font-weight: bold;
 }
 
-/* Inputs de base */
 .form-input,
 .form-select,
 .form-textarea {
@@ -128,7 +122,6 @@
   box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
 }
 
-/* Select personnalisé */
 .form-select {
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
   background-repeat: no-repeat;
@@ -139,14 +132,12 @@
   cursor: pointer;
 }
 
-/* Textarea */
 .form-textarea {
   min-height: 120px;
   resize: vertical;
   line-height: 1.5;
 }
 
-/* Upload de fichiers */
 .file-upload-container {
   position: relative;
 }
@@ -238,7 +229,6 @@
   transform: scale(1.1);
 }
 
-/* Messages d'erreur */
 .error-message {
   color: var(--error-red);
   font-size: 0.85rem;
@@ -252,7 +242,6 @@
   font-size: 0.75rem;
 }
 
-/* Validation en temps réel */
 .form-input.valid,
 .form-select.valid,
 .form-textarea.valid {
@@ -265,7 +254,6 @@
   margin-left: auto;
 }
 
-/* Bouton de soumission */
 .submit-button {
   background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
   color: white;
@@ -309,7 +297,6 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Messages de statut */
 .status-message {
   padding: 1rem;
   border-radius: var(--radius-md);
@@ -338,7 +325,6 @@
   border: 1px solid #bee5eb;
 }
 
-/* Indicateur de progression */
 .progress-indicator {
   display: flex;
   justify-content: space-between;
@@ -405,7 +391,6 @@
   font-weight: 600;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .application-container {
     margin: 1rem;
@@ -425,7 +410,7 @@
   }
   
   .progress-indicator {
-    display: none; /* Masquer sur mobile pour économiser l'espace */
+    display: none; 
   }
 }
 
@@ -444,7 +429,6 @@
   }
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -460,7 +444,6 @@
   animation: fadeIn 0.3s ease-out;
 }
 
-/* Accessibilité */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -469,7 +452,6 @@
   }
 }
 
-/* Focus visible pour l'accessibilité */
 .form-input:focus-visible,
 .form-select:focus-visible,
 .form-textarea:focus-visible,
@@ -478,7 +460,6 @@
   outline-offset: 2px;
 }
 
-/* Styles pour les champs conditionnels */
 .conditional-field {
   animation: fadeIn 0.3s ease-out;
   border-left: 3px solid var(--primary-green);
@@ -495,7 +476,6 @@
   padding: 2rem 0;
 }
 
-/* Styles pour les messages de chargement et d'erreur */
 .loading-container,
 .error-container {
   display: flex;
@@ -522,8 +502,7 @@
 .error-message {
   color: var(--text-light);
   font-size: 1.1rem;
-}/* ===== 
-AMÉLIORATION DES ZONES D'UPLOAD ===== */
+}
 
 .file-upload-area {
   cursor: pointer !important;
@@ -545,7 +524,6 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   box-shadow: 0 2px 8px rgba(127, 204, 114, 0.1);
 }
 
-/* Animation de pulsation pour indiquer la zone cliquable */
 .file-upload-area::before {
   content: '';
   position: absolute;
@@ -562,7 +540,6 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   transform: translateX(100%);
 }
 
-/* Amélioration du texte et des icônes */
 .file-upload-icon {
   font-size: 2.5rem !important;
   margin-bottom: 0.5rem;
@@ -585,7 +562,6 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   opacity: 0.8;
 }
 
-/* Feedback visuel pour les fichiers sélectionnés */
 .file-selected {
   border-color: var(--success-green) !important;
   background: rgba(34, 197, 94, 0.05) !important;
@@ -595,7 +571,6 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   color: var(--success-green) !important;
 }
 
-/* Amélioration du bouton de suppression */
 .remove-file-btn {
   transition: all 0.2s ease !important;
   font-weight: bold;
@@ -607,7 +582,6 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3);
 }
 
-/* Responsive pour les zones d'upload */
 @media (max-width: 768px) {
   .file-upload-area {
     padding: 1.5rem 1rem;
@@ -646,7 +620,6 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   }
 }
 
-/* Animation de chargement pour l'upload */
 .file-uploading {
   position: relative;
   pointer-events: none;
@@ -669,19 +642,16 @@ AMÉLIORATION DES ZONES D'UPLOAD ===== */
   100% { transform: translateX(100%); }
 }
 
-/* Indication visuelle pour les formats acceptés */
 .file-upload-hint::before {
   content: '📎 ';
   margin-right: 0.25rem;
 }
 
-/* Amélioration de l'accessibilité */
 .file-upload-area:focus-within {
   outline: 2px solid var(--primary-green);
   outline-offset: 2px;
 }
 
-/* Message d'encouragement */
 .file-upload-area:hover .file-upload-text::after {
   content: ' 👆';
   animation: bounce 0.6s ease infinite alternate;

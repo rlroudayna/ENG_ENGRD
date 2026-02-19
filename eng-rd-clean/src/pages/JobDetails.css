@@ -1,6 +1,6 @@
-/* JobDetails.css */
+
 .job-details-container {
-  min-height: calc(100vh - 140px); /* Assure que le contenu prend au moins la hauteur de l'écran moins header/footer */
+  min-height: calc(100vh - 140px); 
   background-color: #f8f9fa;
   padding: 2rem 0;
 }
@@ -11,7 +11,6 @@
   padding: 0 1rem;
 }
 
-/* Header de l'offre */
 .job-header {
   background: white;
   border-radius: 12px;
@@ -58,7 +57,6 @@
   font-size: 1.2rem;
 }
 
-/* Boutons */
 .btn-apply {
   background: linear-gradient(135deg, #7fcc72, #6bb85f);
   color: white;
@@ -78,7 +76,6 @@
   box-shadow: 0 6px 20px rgba(127, 204, 114, 0.4);
 }
 
-/* Contenu principal */
 .job-main-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -126,7 +123,6 @@
   margin-bottom: 0.5rem;
 }
 
-/* Compétences */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -142,7 +138,6 @@
   font-weight: 500;
 }
 
-/* Sous-sections */
 .job-subsection {
   margin-bottom: 2rem;
 }
@@ -158,7 +153,6 @@
   margin-bottom: 1rem;
 }
 
-/* Sidebar */
 .job-content-right {
   display: flex;
   flex-direction: column;
@@ -271,7 +265,6 @@
   box-shadow: 0 6px 20px rgba(127, 204, 114, 0.4);
 }
 
-/* Message d'erreur */
 .error-message {
   background: white;
   border-radius: 12px;
@@ -293,7 +286,6 @@
   margin-bottom: 2rem;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .job-main-content {
     grid-template-columns: 1fr;
