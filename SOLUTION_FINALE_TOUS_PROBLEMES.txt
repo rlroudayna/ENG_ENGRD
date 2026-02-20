@@ -1,0 +1,123 @@
+═══════════════════════════════════════════════════════════
+🚀 SOLUTION FINALE - TOUS LES PROBLÈMES
+═══════════════════════════════════════════════════════════
+
+PROBLÈMES IDENTIFIÉS:
+1. ❌ 500 EACCES: permission denied sur uploads/
+2. ❌ 404 sur /api/home-content
+3. ⚠️  CSP bloque Google Fonts
+
+═══════════════════════════════════════════════════════════
+COMMANDES À EXÉCUTER (COPIE-COLLE)
+═══════════════════════════════════════════════════════════
+
+# 1. Aller dans le projet
+cd /var/www/ENG-RD/ENG_ENGRD-main
+
+# 2. Récupérer les nouveaux fichiers
+git pull origin main
+
+# 3. Rendre le script exécutable
+chmod +x fix-all-errors.sh
+
+# 4. Exécuter le script de correction COMPLÈTE
+sudo ./fix-all-errors.sh
+
+═══════════════════════════════════════════════════════════
+CE QUE LE SCRIPT VA FAIRE:
+═══════════════════════════════════════════════════════════
+
+1. ✅ Créer et corriger les permissions du dossier uploads/
+   - chmod 755 uploads
+   - chown correct
+
+2. ✅ Démarrer MongoDB si nécessaire
+
+3. ✅ Installer toutes les dépendances
+
+4. ✅ Créer les collections MongoDB:
+   - homecontents (pour /api/home-content)
+   - news
+   - jobs
+   - applications
+   - messages
+
+5. ✅ Corriger la configuration Apache:
+   - Autoriser Google Fonts dans CSP
+   - Autoriser fonts.googleapis.com
+   - Autoriser fonts.gstatic.com
+
+6. ✅ Redémarrer le backend avec PM2
+
+7. ✅ Tester que tout fonctionne
+
+═══════════════════════════════════════════════════════════
+RÉSULTAT ATTENDU:
+═══════════════════════════════════════════════════════════
+
+✅ Permissions uploads corrigées
+✅ MongoDB actif
+✅ Dépendances installées
+✅ Contenu page d'accueil initialisé
+✅ Actualité de test créée
+✅ Configuration Apache corrigée (CSP autorise Google Fonts)
+✅ Configuration Apache valide
+✅ Apache redémarré
+✅ Backend redémarré avec PM2
+✅ API /api/home-content répond
+✅ Dossier uploads accessible en écriture
+✅ MongoDB actif
+
+═══════════════════════════════════════════════════════════
+VÉRIFICATIONS APRÈS LE SCRIPT:
+═══════════════════════════════════════════════════════════
+
+# Test 1: Upload de fichier (candidature)
+Aller sur le site et soumettre une candidature avec CV
+→ Doit fonctionner sans erreur EACCES
+
+# Test 2: API home-content
+curl https://engineering-rnd.com/api/home-content
+→ Doit retourner du JSON
+
+# Test 3: Google Fonts
+Ouvrir la console du navigateur
+→ Plus d'erreurs CSP pour Google Fonts
+
+# Test 4: Permissions uploads
+ls -la /var/www/ENG-RD/ENG_ENGRD-main/backend/uploads
+→ Doit montrer: drwxr-xr-x (755)
+
+═══════════════════════════════════════════════════════════
+SI ÇA NE MARCHE PAS:
+═══════════════════════════════════════════════════════════
+
+# Voir les logs du backend
+pm2 logs backend --lines 50
+
+# Voir les logs Apache
+sudo tail -f /var/log/apache2/error.log
+
+# Vérifier les permissions manuellement
+sudo chown -R $USER:$USER /var/www/ENG-RD/ENG_ENGRD-main/backend/uploads
+sudo chmod -R 755 /var/www/ENG-RD/ENG_ENGRD-main/backend/uploads
+
+# Redémarrer tout
+sudo systemctl restart apache2
+pm2 restart backend
+
+═══════════════════════════════════════════════════════════
+RÉSUMÉ DES CORRECTIONS:
+═══════════════════════════════════════════════════════════
+
+| Problème | Solution |
+|----------|----------|
+| EACCES uploads/ | chmod 755 + chown |
+| 404 /api/home-content | Collection MongoDB créée |
+| CSP bloque Google Fonts | CSP mis à jour |
+| Backend pas démarré | PM2 start |
+| MongoDB pas initialisé | Collections + données |
+
+═══════════════════════════════════════════════════════════
+
+Tout sera corrigé automatiquement! 💪
