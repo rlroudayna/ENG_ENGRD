@@ -468,8 +468,8 @@
   background-color: var(--light-green);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   padding: 1rem;
-}/
-* Styles pour la page Apply */
+}
+/* Styles pour la page Apply */
 .apply-page {
   min-height: calc(100vh - 140px);
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
