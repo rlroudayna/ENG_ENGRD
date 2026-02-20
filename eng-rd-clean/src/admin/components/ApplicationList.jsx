@@ -268,13 +268,13 @@ export default function ApplicationList() {
                     <div className="documents">
                       {app.cv && (
                         <a 
-                          href={`http://localhost:5000/uploads/${app.cv}`} 
+                          href={`/uploads/${app.cv}`} 
                           target="_blank" 
                           rel="noopener noreferrer" 
                           className="doc-link cv-link"
                           onClick={(e) => {
                             // Vérifier si le fichier existe
-                            fetch(`http://localhost:5000/uploads/${app.cv}`, { method: 'HEAD' })
+                            fetch(`/uploads/${app.cv}`, { method: 'HEAD' })
                               .catch(() => {
                                 e.preventDefault();
                                 const notification = document.createElement('div');
@@ -297,13 +297,13 @@ export default function ApplicationList() {
                       )}
                       {app.coverLetter && (
                         <a 
-                          href={`http://localhost:5000/uploads/${app.coverLetter}`} 
+                          href={`/uploads/${app.coverLetter}`} 
                           target="_blank" 
                           rel="noopener noreferrer" 
                           className="doc-link lm-link"
                           onClick={(e) => {
                             // Vérifier si le fichier existe
-                            fetch(`http://localhost:5000/uploads/${app.coverLetter}`, { method: 'HEAD' })
+                            fetch(`/uploads/${app.coverLetter}`, { method: 'HEAD' })
                               .catch(() => {
                                 e.preventDefault();
                                 const notification = document.createElement('div');
@@ -404,14 +404,14 @@ export default function ApplicationList() {
                 <div className="documents-list">
                   {selectedApplication.cv ? (
                     <a 
-                      href={`http://localhost:5000/uploads/${selectedApplication.cv}`} 
+                      href={`/uploads/${selectedApplication.cv}`} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="document-link"
                       onClick={(e) => {
                         console.log('📄 Téléchargement du CV:', selectedApplication.cv);
                         // Vérifier si le fichier existe
-                        fetch(`http://localhost:5000/uploads/${selectedApplication.cv}`, { method: 'HEAD' })
+                        fetch(`/uploads/${selectedApplication.cv}`, { method: 'HEAD' })
                           .catch(() => {
                             e.preventDefault();
                             const notification = document.createElement('div');
@@ -437,14 +437,14 @@ export default function ApplicationList() {
                   
                   {selectedApplication.coverLetter ? (
                     <a 
-                      href={`http://localhost:5000/uploads/${selectedApplication.coverLetter}`} 
+                      href={`/uploads/${selectedApplication.coverLetter}`} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="document-link"
                       onClick={(e) => {
                         console.log('📝 Téléchargement de la lettre:', selectedApplication.coverLetter);
                         // Vérifier si le fichier existe
-                        fetch(`http://localhost:5000/uploads/${selectedApplication.coverLetter}`, { method: 'HEAD' })
+                        fetch(`/uploads/${selectedApplication.coverLetter}`, { method: 'HEAD' })
                           .catch(() => {
                             e.preventDefault();
                             const notification = document.createElement('div');
